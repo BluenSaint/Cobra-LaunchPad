@@ -32,13 +32,13 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Project Cobra by BlueCrest Financial</span>
-            <div className="relative h-12 w-52 mr-2">
+            <div className="relative h-12 w-52 mr-2 logo-glow">
               <Image 
                 src="/bluecrest-logo.png" 
                 alt="BlueCrest Financial Logo"
                 fill
                 style={{ objectFit: 'contain' }}
-                className="drop-shadow-lg"
+                className="drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]"
                 priority
               />
             </div>
@@ -96,7 +96,7 @@ export default function Navbar() {
                     alt="BlueCrest Financial Logo"
                     fill
                     style={{ objectFit: 'contain' }}
-                    className="drop-shadow-lg"
+                    className="drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]"
                     priority
                   />
                 </div>

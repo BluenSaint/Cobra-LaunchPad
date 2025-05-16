@@ -21,7 +21,9 @@ export default function Home() {
         <Testimonials />
         <FAQ />
       </ClientWrapper>
-      <Pricing />
+      <ClientWrapper>
+        <Pricing />
+      </ClientWrapper>
       <CTA />
       <Footer />
       <ClientWrapper>
