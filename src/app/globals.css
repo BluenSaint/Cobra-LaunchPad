@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   :root {
     --background: 14 14 26;
@@ -16,16 +18,18 @@
     background-color: #0f172a;
     color: #e2e8f0;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
 }
 
 @layer components {
   .btn-primary {
-    @apply relative bg-primary px-6 py-3 text-white rounded-lg font-semibold 
-           hover:bg-primary-hover transition-all duration-300
+    @apply bg-primary px-6 py-3 text-white rounded-lg font-semibold 
+           hover:bg-primary-hover transition-colors duration-200
            focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2
-           transform hover:scale-105 active:scale-95
-           overflow-hidden;
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+           transform hover:scale-105 active:scale-95;
   }
   
   .btn-primary::before {
@@ -44,8 +48,8 @@
   }
   
   .btn-ghost {
-    @apply relative border-2 border-white/80 px-6 py-3 text-white rounded-lg font-semibold
-           hover:bg-white/10 transition-all duration-300
+    @apply border-2 border-white/80 px-6 py-3 text-white rounded-lg font-semibold
+           hover:bg-white/10 transition-colors duration-200
            focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2
            transform hover:scale-105 active:scale-95;
   }
