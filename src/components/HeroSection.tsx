@@ -18,24 +18,24 @@ export default function HeroSection() {
           className="text-center max-w-4xl mx-auto"
         >
           <div className="space-y-2 mb-8">
-            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+            <h1 className="text-4xl md:text-6xl font-bold font-playfair bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600 drop-shadow-lg">
               Project Cobra
             </h1>
-            <p className="text-xl md:text-2xl text-slate-400 tracking-wide">
+            <p className="text-xl md:text-2xl text-slate-400 tracking-wide font-inter">
               by BlueCrest Financial
             </p>
           </div>
-          <p className="text-2xl md:text-3xl text-slate-300 mb-8">
+          <p className="text-2xl md:text-3xl text-slate-300 mb-8 font-playfair">
             Your AI-Powered Credit Repair Partner
           </p>
-          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed font-inter">
             Experience the power of AI-driven credit repair technology. We help you identify errors, 
             dispute inaccuracies, and improve your credit score faster than ever before.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.a
               href="#pricing"
-              className="btn-primary"
+              className="bg-gradient-to-r from-blue-500 to-purple-600 px-6 py-3 text-white rounded-lg font-semibold shadow-md hover:shadow-blue-500/20 transform hover:scale-105 active:scale-95 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -43,7 +43,7 @@ export default function HeroSection() {
             </motion.a>
             <motion.a
               href="#how-it-works"
-              className="btn-ghost"
+              className="border-2 border-white/20 px-6 py-3 text-white rounded-lg font-semibold hover:bg-white/5 transform hover:scale-105 active:scale-95 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

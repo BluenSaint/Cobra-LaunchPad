@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
   { name: 'Features', href: '#features' },
   { name: 'How It Works', href: '#how-it-works' },
-  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Pricing', href: '#pricing' },
   { name: 'FAQ', href: '#faq' },
 ]
 
@@ -29,10 +30,21 @@ export default function Navbar() {
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex flex-col items-start">
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Project Cobra by BlueCrest Financial</span>
-            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
-            <span className="text-sm text-slate-400">by BlueCrest Financial</span>
+            <div className="relative h-12 w-36 mr-2">
+              <Image 
+                src="/bluecrest-logo.png" 
+                alt="BlueCrest Financial Logo"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="drop-shadow-lg"
+                priority
+              />
+            </div>
+            <div className="flex flex-col items-start">
+              <span className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
+            </div>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -54,7 +66,7 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-300 hover:text-white transition-colors"
+              className="text-sm font-semibold leading-6 text-gray-300 hover:text-white transition-colors duration-300 hover:scale-105"
             >
               {item.name}
             </Link>
@@ -63,7 +75,7 @@ export default function Navbar() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="/auth/signin"
-            className="text-sm font-semibold leading-6 text-white bg-primary px-4 py-2 rounded-full hover:bg-primary-hover transition-colors"
+            className="text-sm font-semibold leading-6 text-white bg-gradient-to-r from-blue-500 to-purple-600 px-4 py-2 rounded-lg shadow-md hover:shadow-blue-500/20 transition-all duration-300 hover:scale-105"
           >
             Sign in
           </Link>
@@ -77,10 +89,18 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50">
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5 flex flex-col items-start">
-                <span className="sr-only">Project Cobra by BlueCrest Financial</span>
-                <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
-                <span className="text-sm text-slate-400">by BlueCrest Financial</span>
+              <Link href="/" className="-m-1.5 p-1.5 flex items-center">
+                <div className="relative h-10 w-32 mr-2">
+                  <Image 
+                    src="/bluecrest-logo.png" 
+                    alt="BlueCrest Financial Logo"
+                    fill
+                    style={{ objectFit: 'contain' }}
+                    className="drop-shadow-lg"
+                    priority
+                  />
+                </div>
+                <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
               </Link>
               <button
                 type="button"
@@ -108,7 +128,7 @@ export default function Navbar() {
                 <div className="py-6">
                   <Link
                     href="/auth/signin"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-primary hover:bg-primary-hover"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-blue-500/20"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Sign in
