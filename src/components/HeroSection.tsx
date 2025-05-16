@@ -1,75 +1,42 @@
 'use client'
 
-import React from 'react'
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export default function HeroSection() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 gradient-bg opacity-20" />
+    <section className="relative pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-900/80" />
+        <div className="absolute inset-0 gradient-bg" />
+      </div>
       
-      <div className="relative z-10 max-w-5xl mx-auto px-6 py-32 sm:py-40 lg:py-48 text-center">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="font-playfair text-5xl md:text-6xl font-semibold text-white mb-8">
-            AI Automated Credit Repair Agent
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+            BlueCrest Financial
           </h1>
-          <p className="font-inter text-lg md:text-xl text-gray-300 mb-12 max-w-3xl mx-auto">
-            A powerful credit repair solution to improve your credit report and boost your score.
+          <p className="text-2xl md:text-3xl text-slate-300 mb-8">
+            Your AI-Powered Credit Repair Partner
           </p>
-          
+          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+            Experience the power of AI-driven credit repair technology. We help you identify errors, 
+            dispute inaccuracies, and improve your credit score faster than ever before.
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth/signin">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-primary w-full sm:w-auto"
-              >
-                Get Started
-              </motion.button>
-            </Link>
-            <Link href="#how-it-works">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-ghost w-full sm:w-auto"
-              >
-                How It Works
-              </motion.button>
-            </Link>
-          </div>
-          
-          <div className="mt-8">
-            <Link href="#features">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="text-gray-300 hover:text-white transition-colors flex items-center justify-center gap-2"
-              >
-                See Features
-                <svg
-                  className="w-5 h-5 animate-bounce"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                  />
-                </svg>
-              </motion.button>
-            </Link>
+            <a href="#pricing" className="btn-primary">
+              Get Started
+            </a>
+            <a href="#how-it-works" className="btn-ghost">
+              Learn More
+            </a>
           </div>
         </motion.div>
       </div>
-    </div>
+    </section>
   )
 } 

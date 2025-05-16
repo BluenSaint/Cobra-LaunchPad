@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const navigation = [
@@ -30,16 +29,9 @@ export default function Navbar() {
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Cobra LaunchPad</span>
-            <Image
-              src="/bluecrest-logo.png"
-              alt="Blue Crest Logo"
-              width={180}
-              height={48}
-              priority
-              className="h-12 w-auto"
-            />
+          <Link href="/" className="-m-1.5 p-1.5 flex items-center">
+            <span className="sr-only">BlueCrest Financial</span>
+            <span className="text-2xl font-bold text-white">BlueCrest Financial</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -85,15 +77,8 @@ export default function Navbar() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">Cobra LaunchPad</span>
-                <Image
-                  src="/bluecrest-logo.png"
-                  alt="Blue Crest Logo"
-                  width={180}
-                  height={48}
-                  priority
-                  className="h-12 w-auto"
-                />
+                <span className="sr-only">BlueCrest Financial</span>
+                <span className="text-2xl font-bold text-white">BlueCrest Financial</span>
               </Link>
               <button
                 type="button"
