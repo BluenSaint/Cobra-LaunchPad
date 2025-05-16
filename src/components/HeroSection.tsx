@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import DroneAnimation from './DroneAnimation'
 
 export default function HeroSection() {
   return (
@@ -33,13 +34,25 @@ export default function HeroSection() {
             dispute inaccuracies, and improve your credit score faster than ever before.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#pricing" className="btn-primary">
+            <motion.a
+              href="#pricing"
+              className="btn-primary"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Get Started
-            </a>
-            <a href="#how-it-works" className="btn-ghost">
+            </motion.a>
+            <motion.a
+              href="#how-it-works"
+              className="btn-ghost"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Learn More
-            </a>
+            </motion.a>
           </div>
+          
+          <DroneAnimation />
         </motion.div>
       </div>
     </section>
