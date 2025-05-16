@@ -1,6 +1,7 @@
 'use client'
 
 import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 export default function HeroSection() {
@@ -23,20 +24,49 @@ export default function HeroSection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary"
-            >
-              Get Started
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-ghost"
-            >
-              How It Works
-            </motion.button>
+            <Link href="/auth/signin">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary w-full sm:w-auto"
+              >
+                Get Started
+              </motion.button>
+            </Link>
+            <Link href="#how-it-works">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-ghost w-full sm:w-auto"
+              >
+                How It Works
+              </motion.button>
+            </Link>
+          </div>
+          
+          <div className="mt-8">
+            <Link href="#features">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="text-gray-300 hover:text-white transition-colors flex items-center justify-center gap-2"
+              >
+                See Features
+                <svg
+                  className="w-5 h-5 animate-bounce"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </motion.button>
+            </Link>
           </div>
         </motion.div>
       </div>
