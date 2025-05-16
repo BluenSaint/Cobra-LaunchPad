@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import DroneAnimation from './DroneAnimation'
 
 export default function HeroSection() {
   return (
@@ -51,8 +50,6 @@ export default function HeroSection() {
               Learn More
             </motion.a>
           </div>
-          
-          <DroneAnimation />
         </motion.div>
       </div>
     </section>
