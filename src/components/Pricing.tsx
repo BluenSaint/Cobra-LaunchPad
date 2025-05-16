@@ -1,5 +1,20 @@
 'use client'
 
+// Re-creating the component from scratch to remove any potential hidden dependencies
+import { FC } from 'react'
+
+const PriceItem: FC<{
+  name: string
+  children: React.ReactNode
+}> = ({ name, children }) => (
+  <li className="flex items-start">
+    <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+    </svg>
+    <span className="text-slate-300">{children}</span>
+  </li>
+)
+
 export default function Pricing() {
   return (
     <section id="pricing" className="py-16 md:py-24 bg-slate-900">
@@ -26,36 +41,11 @@ export default function Pricing() {
               <p className="text-slate-400 text-sm">Perfect for individuals just starting their credit repair journey.</p>
             </div>
             <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Covers 3 credit bureaus</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">2 disputes per month (unless escalated)</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Credit report analysis</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Secure document uploads</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Ongoing credit monitoring</span>
-              </li>
+              <PriceItem name="bureaus">Covers 3 credit bureaus</PriceItem>
+              <PriceItem name="disputes">2 disputes per month (unless escalated)</PriceItem>
+              <PriceItem name="analysis">Credit report analysis</PriceItem>
+              <PriceItem name="uploads">Secure document uploads</PriceItem>
+              <PriceItem name="monitoring">Ongoing credit monitoring</PriceItem>
             </ul>
             <button className="w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-blue-500 to-blue-600 hover:shadow-lg hover:shadow-blue-500/20 text-white transform hover:scale-105 active:scale-95">
               Get Started
@@ -79,36 +69,11 @@ export default function Pricing() {
               <p className="text-slate-400 text-sm">Ideal for those who need comprehensive credit repair solutions.</p>
             </div>
             <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">All Shield benefits</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Unlimited disputes</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Tradeline placement (1 per month)</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Personal funding roadmap</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Business credit coaching</span>
-              </li>
+              <PriceItem name="shield">All Shield benefits</PriceItem>
+              <PriceItem name="unlimited">Unlimited disputes</PriceItem>
+              <PriceItem name="tradeline">Tradeline placement (1 per month)</PriceItem>
+              <PriceItem name="roadmap">Personal funding roadmap</PriceItem>
+              <PriceItem name="coaching">Business credit coaching</PriceItem>
             </ul>
             <button className="w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-blue-500 to-purple-600 hover:shadow-lg hover:shadow-blue-500/20 text-white transform hover:scale-105 active:scale-95">
               Start Elite Plan
@@ -127,36 +92,11 @@ export default function Pricing() {
               <p className="text-slate-400 text-sm">For businesses and individuals who need the ultimate credit solution.</p>
             </div>
             <ul className="space-y-4 mb-8">
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">All Elite perks</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">2 tradelines/month</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Business formation (LLC, EIN, DUNS)</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">Access to private funding network</span>
-              </li>
-              <li className="flex items-start">
-                <svg className="h-5 w-5 text-blue-500 mr-2 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-slate-300">AI-enhanced funding playbook</span>
-              </li>
+              <PriceItem name="elite">All Elite perks</PriceItem>
+              <PriceItem name="tradelines">2 tradelines/month</PriceItem>
+              <PriceItem name="business">Business formation (LLC, EIN, DUNS)</PriceItem>
+              <PriceItem name="funding">Access to private funding network</PriceItem>
+              <PriceItem name="playbook">AI-enhanced funding playbook</PriceItem>
             </ul>
             <button className="w-full py-3 px-6 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-blue-500 to-blue-600 hover:shadow-lg hover:shadow-blue-500/20 text-white transform hover:scale-105 active:scale-95">
               Contact Sales

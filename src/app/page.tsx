@@ -8,20 +8,25 @@ import Pricing from '@/components/Pricing'
 import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
 import CTA from '@/components/CTA'
+import ClientWrapper from '@/components/ClientWrapper'
 
 export default function Home() {
   return (
     <main className="bg-background">
       <Navbar />
-      <HeroSection />
-      <Features />
-      <HowItWorks />
-      <Testimonials />
-      <FAQ />
+      <ClientWrapper>
+        <HeroSection />
+        <Features />
+        <HowItWorks />
+        <Testimonials />
+        <FAQ />
+      </ClientWrapper>
       <Pricing />
       <CTA />
       <Footer />
-      <BackToTop />
+      <ClientWrapper>
+        <BackToTop />
+      </ClientWrapper>
     </main>
   )
 }
