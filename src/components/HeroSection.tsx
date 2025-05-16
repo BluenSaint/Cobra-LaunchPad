@@ -17,13 +17,18 @@ export default function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
-            BlueCrest Financial
-          </h1>
+          <div className="space-y-2 mb-8">
+            <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-blue-600">
+              Project Cobra
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-400 tracking-wide">
+              by BlueCrest Financial
+            </p>
+          </div>
           <p className="text-2xl md:text-3xl text-slate-300 mb-8">
             Your AI-Powered Credit Repair Partner
           </p>
-          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
             Experience the power of AI-driven credit repair technology. We help you identify errors, 
             dispute inaccuracies, and improve your credit score faster than ever before.
           </p>

@@ -29,9 +29,10 @@ export default function Navbar() {
     }`}>
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-            <span className="sr-only">BlueCrest Financial</span>
-            <span className="text-2xl font-bold text-white">BlueCrest Financial</span>
+          <Link href="/" className="-m-1.5 p-1.5 flex flex-col items-start">
+            <span className="sr-only">Project Cobra by BlueCrest Financial</span>
+            <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
+            <span className="text-sm text-slate-400">by BlueCrest Financial</span>
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -76,9 +77,10 @@ export default function Navbar() {
         <div className="fixed inset-0 z-50">
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5">
-                <span className="sr-only">BlueCrest Financial</span>
-                <span className="text-2xl font-bold text-white">BlueCrest Financial</span>
+              <Link href="/" className="-m-1.5 p-1.5 flex flex-col items-start">
+                <span className="sr-only">Project Cobra by BlueCrest Financial</span>
+                <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
+                <span className="text-sm text-slate-400">by BlueCrest Financial</span>
               </Link>
               <button
                 type="button"
