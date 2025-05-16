@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Project Cobra by BlueCrest Financial</span>
-            <div className="relative h-12 w-36 mr-2">
+            <div className="relative h-12 w-52 mr-2">
               <Image 
                 src="/bluecrest-logo.png" 
                 alt="BlueCrest Financial Logo"
@@ -42,7 +42,7 @@ export default function Navbar() {
                 priority
               />
             </div>
-            <div className="flex flex-col items-start">
+            <div className="flex flex-col items-start ml-2">
               <span className="text-lg md:text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
             </div>
           </Link>
@@ -90,7 +90,7 @@ export default function Navbar() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-                <div className="relative h-10 w-32 mr-2">
+                <div className="relative h-10 w-40 mr-2">
                   <Image 
                     src="/bluecrest-logo.png" 
                     alt="BlueCrest Financial Logo"
@@ -100,7 +100,7 @@ export default function Navbar() {
                     priority
                   />
                 </div>
-                <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600">Project Cobra</span>
+                <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 ml-2">Project Cobra</span>
               </Link>
               <button
                 type="button"
