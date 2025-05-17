@@ -60,23 +60,34 @@ export default function Navbar() {
             <span className="sr-only">Project Cobra by BlueCrest Financial</span>
             <div className="relative w-10 h-10 sm:w-12 sm:h-12">
               <Image 
-                src="/bluecrest-logo.png" 
+                src="/bluecrest-logo-new.png" 
                 alt="BlueCrest Financial Logo"
                 fill
                 style={{ objectFit: 'contain' }}
-                className="drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]"
+                className="drop-shadow-[0_0_10px_rgba(20,184,166,0.7)]"
                 priority
               />
             </div>
-            <span className="ml-2 text-lg font-bold uppercase tracking-wide text-white">PROJECT COBRA</span>
+            <div className="flex flex-col ml-2">
+              <span className="text-lg font-bold uppercase tracking-wide text-white leading-none">PROJECT COBRA</span>
+              <span className="text-xs text-teal-500">by BlueCrest Financial</span>
+            </div>
           </Link>
         </div>
+        
+        {/* Compliance badges on desktop */}
+        <div className="hidden lg:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
+          <span className="px-2 py-1 bg-teal-900/30 rounded-full text-xs text-teal-400 border border-teal-800/50">CROA Compliant</span>
+          <span className="px-2 py-1 bg-teal-900/30 rounded-full text-xs text-teal-400 border border-teal-800/50">FCRA Guidelines</span>
+          <span className="px-2 py-1 bg-teal-900/30 rounded-full text-xs text-teal-400 border border-teal-800/50">SOC2</span>
+        </div>
+        
         <div className="hidden lg:flex lg:gap-x-12 justify-center">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-white hover:text-white/80 transition-colors duration-300"
+              className="text-sm font-semibold leading-6 text-white hover:text-teal-300 transition-colors duration-300"
             >
               {item.name}
             </Link>
@@ -85,7 +96,7 @@ export default function Navbar() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link
             href="#pricing"
-            className="text-sm font-semibold leading-6 text-white bg-teal-600 hover:bg-teal-700 px-4 py-2 rounded-md transition-colors duration-300"
+            className="text-sm font-semibold leading-6 text-white bg-teal-600 hover:bg-teal-500 px-4 py-2 rounded-md transition-colors duration-300 shadow-lg shadow-teal-500/20"
           >
             Get Started
           </Link>
@@ -113,7 +124,7 @@ export default function Navbar() {
         aria-hidden={!mobileMenuOpen}
       >
         <div 
-          className="absolute inset-0 bg-black/20" 
+          className="absolute inset-0 bg-black/20 backdrop-blur-sm" 
           onClick={() => setMobileMenuOpen(false)}
         />
         <div className={`fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm overflow-y-auto bg-[#03293d] px-6 py-6 transform transition-transform duration-300 ease-in-out ${
@@ -127,15 +138,18 @@ export default function Navbar() {
             >
               <div className="relative w-8 h-8 sm:w-10 sm:h-10">
                 <Image 
-                  src="/bluecrest-logo.png" 
+                  src="/bluecrest-logo-new.png" 
                   alt="BlueCrest Financial Logo"
                   fill
                   style={{ objectFit: 'contain' }}
-                  className="drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]"
+                  className="drop-shadow-[0_0_10px_rgba(20,184,166,0.7)]"
                   priority
                 />
               </div>
-              <span className="ml-2 text-base font-bold uppercase tracking-wide text-white">PROJECT COBRA</span>
+              <div className="flex flex-col ml-2">
+                <span className="text-base font-bold uppercase tracking-wide text-white leading-none">PROJECT COBRA</span>
+                <span className="text-xs text-teal-500">by BlueCrest Financial</span>
+              </div>
             </Link>
             <button
               type="button"
@@ -146,6 +160,14 @@ export default function Navbar() {
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>
+          
+          {/* Mobile compliance badges */}
+          <div className="flex flex-wrap gap-2 mt-4">
+            <span className="px-2 py-1 bg-teal-900/30 rounded-full text-xs text-teal-400 border border-teal-800/50">CROA Compliant</span>
+            <span className="px-2 py-1 bg-teal-900/30 rounded-full text-xs text-teal-400 border border-teal-800/50">FCRA Guidelines</span>
+            <span className="px-2 py-1 bg-teal-900/30 rounded-full text-xs text-teal-400 border border-teal-800/50">SOC2</span>
+          </div>
+          
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/25">
               <div className="space-y-2 py-6">
@@ -153,7 +175,7 @@ export default function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-teal-900/20 transition-colors"
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick(item.href);
@@ -166,7 +188,7 @@ export default function Navbar() {
               <div className="py-6">
                 <a
                   href="#pricing"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-teal-600 hover:bg-teal-700 transition-colors text-center"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-teal-600 hover:bg-teal-500 transition-colors text-center shadow-lg shadow-teal-500/20"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick('#pricing');
