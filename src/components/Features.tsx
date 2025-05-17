@@ -59,7 +59,7 @@ const features = [
 
 export default function Features() {
   return (
-    <section id="features" className="py-20 bg-slate-50">
+    <section id="features" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,15 +68,16 @@ export default function Features() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-[#03293d] mb-4">
-            Our AI Credit Repair Features
+          <h2 className="text-4xl font-bold text-white mb-4">
+            AI Solutions That Take Your Business <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">to the Next Level</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto">
-            Project Cobra combines AI technology with credit expertise to help improve your credit score.
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Our AI-powered platform combines advanced technology with credit expertise to automate and optimize your business processes.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -84,51 +85,63 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col items-center text-center bg-white p-6 rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="flex flex-col p-6 rounded-lg border border-purple-900/30 bg-slate-900/30 backdrop-blur-sm"
             >
-              <div className="h-16 w-16 text-teal-600 mb-4 flex items-center justify-center bg-teal-50 p-3 rounded-xl">
+              <div className="h-12 w-12 text-purple-500 mb-4 flex items-center justify-center bg-purple-900/20 p-2 rounded-md">
                 <feature.icon />
               </div>
-              <h3 className="text-xl font-semibold text-[#03293d] mb-3">{feature.title}</h3>
-              <p className="text-slate-600">{feature.description}</p>
+              <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
+              <p className="text-slate-400 text-sm">{feature.description}</p>
             </motion.div>
           ))}
         </div>
         
-        {/* Feature highlights */}
-        <div className="mt-20 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Feature code snippet */}
+        <div className="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-gradient-to-br from-teal-500 to-teal-700 p-8 rounded-xl text-white shadow-xl"
+            className="relative"
           >
-            <div className="flex items-center mb-4">
-              <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <h3 className="text-xl font-bold">Fast Results</h3>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-indigo-600/20 rounded-lg blur-lg"></div>
+            <div className="relative bg-slate-900/80 p-5 rounded-lg backdrop-blur-sm border border-purple-900/50">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center">
+                  <div className="h-3 w-3 rounded-full bg-red-500 mr-2"></div>
+                  <div className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
+                  <div className="h-3 w-3 rounded-full bg-green-500"></div>
+                </div>
+                <span className="text-xs text-slate-500">automation.js</span>
+              </div>
+              <pre className="text-xs md:text-sm text-slate-300 overflow-x-auto">
+                <code>
+{`import { analyzeCredit } from './ai-core';
+
+// Automated credit dispute function
+async function generateDisputes(report) {
+  const analysis = await analyzeCredit(report);
+  
+  return analysis.items
+    .filter(item => item.accuracy < 0.8)
+    .map(item => ({
+      account: item.accountName,
+      reason: item.reasonCodes,
+      strategy: item.recommendedAction,
+      probability: item.successProb
+    }));
+}
+
+// Execute the automation pipeline
+export default function runAutomation(userData) {
+  console.log("Starting automation for: " + userData.name);
+  const disputes = generateDisputes(userData.report);
+  return disputes;
+}`}
+                </code>
+              </pre>
             </div>
-            <p>Our AI-powered system works around the clock to process disputes, often delivering results in 30-45 days.</p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="bg-gradient-to-br from-blue-500 to-blue-700 p-8 rounded-xl text-white shadow-xl"
-          >
-            <div className="flex items-center mb-4">
-              <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M16.2428 7.75738L10.0003 13.9999L7.75781 11.7574" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <h3 className="text-xl font-bold">Secure & Compliant</h3>
-            </div>
-            <p>FCRA, CROA compliant algorithms ensure all disputes follow legal consumer protection guidelines.</p>
           </motion.div>
           
           <motion.div
@@ -136,16 +149,32 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-gradient-to-br from-purple-500 to-purple-700 p-8 rounded-xl text-white shadow-xl"
+            className="flex flex-col justify-center"
           >
-            <div className="flex items-center mb-4">
-              <svg className="w-8 h-8 mr-3" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 15C8.8299 15 6.01077 16.5306 4.21597 18.906C3.83897 19.4172 3.65047 19.6728 3.60496 20.0195C3.55945 20.3662 3.67213 20.6604 3.89748 21.2487C4.12284 21.837 4.23552 22.1312 4.55258 22.3156C4.86964 22.5 5.24743 22.5 6.00303 22.5H17.997C18.7526 22.5 19.1304 22.5 19.4474 22.3156C19.7645 22.1312 19.8772 21.837 20.1025 21.2487C20.3279 20.6604 20.4405 20.3662 20.395 20.0195C20.3495 19.6728 20.161 19.4172 19.784 18.906C17.9892 16.5306 15.1701 15 12 15Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M12 12C14.4853 12 16.5 9.98528 16.5 7.5C16.5 5.01472 14.4853 3 12 3C9.51472 3 7.5 5.01472 7.5 7.5C7.5 9.98528 9.51472 12 12 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-              <h3 className="text-xl font-bold">Easy to Use</h3>
-            </div>
-            <p>Upload your credit reports once, and our system handles everything else with minimal intervention required.</p>
+            <h3 className="text-2xl font-bold text-white mb-4">Advanced AI Engine for Scale</h3>
+            <p className="text-slate-400 mb-6">
+              Our core automation engine leverages machine learning algorithms to identify patterns in your credit data that humans might miss. This allows for faster, more accurate dispute filing.
+            </p>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <svg className="w-5 h-5 text-purple-500 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-slate-300">Processes thousands of data points in seconds</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 text-purple-500 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-slate-300">CROA and FCRA compliant dispute generation</span>
+              </li>
+              <li className="flex items-start">
+                <svg className="w-5 h-5 text-purple-500 mr-2 mt-0.5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-slate-300">Enterprise-grade security with SOC2 certification</span>
+              </li>
+            </ul>
           </motion.div>
         </div>
       </div>

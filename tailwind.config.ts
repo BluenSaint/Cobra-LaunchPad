@@ -12,8 +12,12 @@ const config: Config = {
       colors: {
         background: '#0e0e1a',
         primary: {
-          DEFAULT: '#6366f1',
-          hover: '#4f46e5',
+          DEFAULT: '#8a5cf5',
+          hover: '#724bd6',
+        },
+        secondary: {
+          DEFAULT: '#4F46E5',
+          hover: '#4338CA',
         }
       },
       fontFamily: {

@@ -20,15 +20,11 @@ export default function Home() {
         <HowItWorks />
         <Testimonials />
         <FAQ />
-      </ClientWrapper>
-      <ClientWrapper>
         <Pricing />
-      </ClientWrapper>
-      <CTA />
-      <Footer />
-      <ClientWrapper>
+        <CTA />
         <BackToTop />
       </ClientWrapper>
+      <Footer />
     </main>
   )
 }
