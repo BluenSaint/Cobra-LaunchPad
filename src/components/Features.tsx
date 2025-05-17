@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 const features = [
   {
     title: 'Automated Dispute Filing',
-    description: 'Finds Auromaticalum',
+    description: 'Intelligently generates and files dispute letters based on your credit report',
     icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
@@ -15,7 +15,7 @@ const features = [
   },
   {
     title: 'Real-Time Score Monitoring',
-    description: 'Adirfeecodupdatates',
+    description: 'Track your credit score changes with detailed analytics and alerts',
     icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
         <path d="M4 14L8 10L12 14L20 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -24,8 +24,8 @@ const features = [
     ),
   },
   {
-    title: 'Attorney-Reviewed Letturs',
-    description: 'Steke a Sampre doros',
+    title: 'Legally Guided Dispute Automation',
+    description: 'AI-powered dispute strategy based on consumer protection rights',
     icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
         <path d="M12 2L4 10V22H20V10L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -35,7 +35,7 @@ const features = [
   },
   {
     title: 'Business Credit Solutions',
-    description: 'Eficiont Ocations',
+    description: 'Build and improve business credit with specialized strategies',
     icon: () => (
       <svg viewBox="0 0 24 24" fill="none" className="w-full h-full">
         <path d="M4 5V19H20V5H4Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

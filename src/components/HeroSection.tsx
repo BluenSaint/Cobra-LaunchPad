@@ -14,14 +14,24 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="text-left"
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <div className="mb-8">
+              <h1 className="text-4xl md:text-6xl font-bold font-serif leading-tight">
+                <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-600 drop-shadow-[0_5px_15px_rgba(59,130,246,0.8)] transform transition-all duration-500 mb-2">
+                  PROJECT COBRA
+                </span>
+                <br />
+                <span className="text-white">by BlueCrest Financial</span>
+              </h1>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
               AI-Powered<br />
               Credit Repair.<br />
-              <span className="text-3xl md:text-5xl">Fast. Secure.<br />Proven.</span>
-            </h1>
+              <span className="text-3xl md:text-4xl">Fast. Secure.<br />Proven.</span>
+            </h2>
             
             <p className="text-lg text-slate-300 mb-8 max-w-lg">
-              Transform your credit score with automated, attorney-reviewed dispute solutions.
+              A powerful AI credit repair solution to improve your credit report and boost your score.
             </p>
             
             <div className="flex flex-wrap gap-4">

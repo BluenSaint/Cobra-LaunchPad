@@ -10,7 +10,7 @@ const footerLinks = {
     { name: "How It Works", href: "/#how-it-works" },
     { name: "Pricing", href: "/#pricing" },
     { name: "FAQ", href: "/#faq" },
-    { name: "Blog", href: "https://www.instagram.com/bluecrestfinancial" },
+    { name: "Blog", href: "https://www.instagram.com/bluecrestfinancial?igsh=MWY5NDBnaGVxZjUz&utm_source=qr" },
   ],
   right: [
     { name: "Privacy Policy", href: "/legal/privacy-policy" },
@@ -19,19 +19,19 @@ const footerLinks = {
     { name: "Cookie Policy", href: "/legal/cookies" },
   ],
   social: [
-    { name: "Facebook", icon: faFacebook, href: "https://facebook.com" },
-    { name: "X", icon: faXTwitter, href: "https://twitter.com" },
-    { name: "Instagram", icon: faInstagram, href: "https://instagram.com/bluecrestfinancial" },
+    { name: "Facebook", icon: faFacebook, href: "https://facebook.com/bluecrestfinancial" },
+    { name: "X", icon: faXTwitter, href: "https://twitter.com/bluecrestfin" },
+    { name: "Instagram", icon: faInstagram, href: "https://www.instagram.com/bluecrestfinancial?igsh=MWY5NDBnaGVxZjUz&utm_source=qr" },
   ],
-  copyright: "© 2025 Blue Crest Financial Consultant. All Rights Reserved.",
-  disclaimer: "This site is for informational purposes only. We are not financial advisors."
+  copyright: "© 2024 Blue Crest Financial. All Rights Reserved.",
+  disclaimer: "BlueCrest Financial is not a law firm or a credit bureau. Results vary based on accuracy of your credit report."
 }
 
 const legalContent = {
-  privacy: "We collect only the data necessary to provide services. All data is encrypted and never sold. Learn more by reviewing our full privacy commitment.",
-  terms: "By using Project Cobra, you agree to our terms which govern usage, billing, dispute logic, and limitations of liability. This platform is not a law firm and does not offer legal advice.",
-  disclaimer: "Results are not guaranteed. Every credit profile is different. This site is for informational and educational purposes only. Project Cobra does not promise score increases or deletions.",
-  cookies: "We use essential cookies to improve functionality and analytics. By using the site, you consent to the use of cookies in accordance with our privacy practices."
+  privacy: "We maintain encrypted storage of your data and never sell or share your information with third parties without your explicit consent.",
+  terms: "No guarantee of credit outcome. User is responsible for data accuracy. Full cancellation rights. Services begin after signed agreement.",
+  disclaimer: "BlueCrest is not a law firm. No guarantee of deletion or score increase. All services are based on public consumer protection rights.",
+  cookies: "We use cookies only for session/auth tracking, and you can opt out at any time in your browser settings."
 }
 
 export default function Footer() {
@@ -41,7 +41,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Left Links */}
           <div>
-            <h3 className="text-lg font-bold font-playfair text-white mb-4">Quick Links</h3>
+            <h3 className="text-lg font-bold text-white mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {footerLinks.left.map((link) => (
                 <li key={link.name}>
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Right Links */}
           <div>
-            <h3 className="text-lg font-bold font-playfair text-white mb-4">Legal</h3>
+            <h3 className="text-lg font-bold text-white mb-4">Legal</h3>
             <ul className="space-y-2">
               {footerLinks.right.map((link) => (
                 <li key={link.name}>
@@ -75,18 +75,18 @@ export default function Footer() {
 
           {/* Legal Summaries */}
           <div>
-            <h3 className="text-lg font-bold font-playfair text-white mb-4">Legal Summaries</h3>
+            <h3 className="text-lg font-bold text-white mb-4">Legal Summaries</h3>
             <div className="space-y-4 text-xs text-slate-500">
-              <p><span className="text-blue-400">Privacy:</span> {legalContent.privacy}</p>
-              <p><span className="text-blue-400">Terms:</span> {legalContent.terms}</p>
-              <p><span className="text-blue-400">Disclaimer:</span> {legalContent.disclaimer}</p>
-              <p><span className="text-blue-400">Cookies:</span> {legalContent.cookies}</p>
+              <p><span className="text-teal-400">Privacy:</span> {legalContent.privacy}</p>
+              <p><span className="text-teal-400">Terms:</span> {legalContent.terms}</p>
+              <p><span className="text-teal-400">Disclaimer:</span> {legalContent.disclaimer}</p>
+              <p><span className="text-teal-400">Cookies:</span> {legalContent.cookies}</p>
             </div>
           </div>
 
           {/* Social Links */}
           <div>
-            <h3 className="text-lg font-bold font-playfair text-white mb-4">Connect With Us</h3>
+            <h3 className="text-lg font-bold text-white mb-4">Connect With Us</h3>
             <div className="flex space-x-6 mb-8">
               {footerLinks.social.map((social) => (
                 <a
@@ -106,6 +106,13 @@ export default function Footer() {
             <div className="space-y-4">
               <p className="text-sm text-slate-400">{footerLinks.copyright}</p>
               <p className="text-sm text-slate-500">{footerLinks.disclaimer}</p>
+              
+              {/* Compliance badges */}
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-400">CROA Compliant</span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-400">FCRA Guidelines</span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-xs text-slate-400">SOC2</span>
+              </div>
             </div>
           </div>
         </div>

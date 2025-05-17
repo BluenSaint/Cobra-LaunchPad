@@ -24,6 +24,32 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Handle link clicking on mobile to close menu and scroll to section
+  const handleNavClick = (href: string) => {
+    setMobileMenuOpen(false)
+    
+    // Add a slight delay to allow the menu to close before scrolling
+    setTimeout(() => {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 300)
+  }
+
+  // Prevent body scrolling when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [mobileMenuOpen])
+
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${
       isScrolled || mobileMenuOpen ? 'bg-slate-900/95 backdrop-blur-md shadow-lg' : 'bg-[#03293d]'
@@ -31,14 +57,18 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-            <span className="sr-only">Project Cobra</span>
-            <div className="flex items-center">
-              <svg className="h-8 w-8 text-teal-500" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-              </svg>
-              <span className="ml-2 text-lg font-bold uppercase tracking-wide text-white">PROJECT COBRA</span>
+            <span className="sr-only">Project Cobra by BlueCrest Financial</span>
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+              <Image 
+                src="/bluecrest-logo.png" 
+                alt="BlueCrest Financial Logo"
+                fill
+                style={{ objectFit: 'contain' }}
+                className="drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]"
+                priority
+              />
             </div>
+            <span className="ml-2 text-lg font-bold uppercase tracking-wide text-white">PROJECT COBRA</span>
           </Link>
         </div>
         <div className="hidden lg:flex lg:gap-x-12 justify-center">
@@ -65,6 +95,7 @@ export default function Navbar() {
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
           >
             <span className="sr-only">Toggle menu</span>
             {mobileMenuOpen ? (
@@ -76,54 +107,73 @@ export default function Navbar() {
         </div>
       </nav>
       <div
-        className={`lg:hidden transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full'
+        className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out ${
+          mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
+        aria-hidden={!mobileMenuOpen}
       >
-        <div className="fixed inset-0 z-50">
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#03293d] px-6 py-6 sm:max-w-sm">
-            <div className="flex items-center justify-between">
-              <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-                <div className="flex items-center">
-                  <svg className="h-7 w-7 text-teal-500" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-                    <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-                  </svg>
-                  <span className="ml-2 text-base font-bold uppercase tracking-wide text-white">PROJECT COBRA</span>
-                </div>
-              </Link>
-              <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-white"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="sr-only">Close menu</span>
-                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-              </button>
-            </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/25">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-                <div className="py-6">
-                  <Link
-                    href="#pricing"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-teal-600 hover:bg-teal-700 transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
+        <div 
+          className="absolute inset-0 bg-black/20" 
+          onClick={() => setMobileMenuOpen(false)}
+        />
+        <div className={`fixed inset-y-0 right-0 z-50 w-full sm:max-w-sm overflow-y-auto bg-[#03293d] px-6 py-6 transform transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+        }`}>
+          <div className="flex items-center justify-between">
+            <Link 
+              href="/" 
+              className="-m-1.5 p-1.5 flex items-center"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+                <Image 
+                  src="/bluecrest-logo.png" 
+                  alt="BlueCrest Financial Logo"
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  className="drop-shadow-[0_0_10px_rgba(59,130,246,0.7)]"
+                  priority
+                />
+              </div>
+              <span className="ml-2 text-base font-bold uppercase tracking-wide text-white">PROJECT COBRA</span>
+            </Link>
+            <button
+              type="button"
+              className="-m-2.5 rounded-md p-2.5 text-white"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <span className="sr-only">Close menu</span>
+              <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+            </button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-500/25">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.href);
+                    }}
                   >
-                    Get Started
-                  </Link>
-                </div>
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div className="py-6">
+                <a
+                  href="#pricing"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white bg-teal-600 hover:bg-teal-700 transition-colors text-center"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick('#pricing');
+                  }}
+                >
+                  Get Started
+                </a>
               </div>
             </div>
           </div>
