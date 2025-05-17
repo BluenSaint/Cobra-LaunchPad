@@ -15,8 +15,8 @@ import TrustedBy from '@/components/TrustedBy'
 export default function Home() {
   return (
     <main className="bg-background">
-      <Navbar />
       <ClientWrapper>
+        <Navbar />
         <HeroSection />
         <TrustedBy />
         <Features />
@@ -27,8 +27,8 @@ export default function Home() {
         <Pricing />
         <CTA />
         <BackToTop />
+        <Footer />
       </ClientWrapper>
-      <Footer />
     </main>
   )
 }

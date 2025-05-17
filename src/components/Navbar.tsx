@@ -58,8 +58,14 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
             <span className="sr-only">Project Cobra by BlueCrest Financial</span>
-            <div className="bg-slate-800/80 rounded-full p-1.5 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 border border-purple-900/30">
-              <span className="text-lg font-bold text-white">BC</span>
+            <div className="rounded-full p-1 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12">
+              <Image 
+                src="/bluecrest-logo.png" 
+                alt="BlueCrest Financial" 
+                width={48} 
+                height={48} 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="flex flex-col ml-2">
               <span className="text-lg font-bold uppercase tracking-wide text-white leading-none">PROJECT COBRA</span>
@@ -129,8 +135,14 @@ export default function Navbar() {
               className="-m-1.5 p-1.5 flex items-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <div className="bg-slate-800/80 rounded-full p-1.5 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-purple-900/30">
-                <span className="text-base font-bold text-white">BC</span>
+              <div className="rounded-full p-1 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10">
+                <Image 
+                  src="/bluecrest-logo.png" 
+                  alt="BlueCrest Financial" 
+                  width={40} 
+                  height={40} 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col ml-2">
                 <span className="text-base font-bold uppercase tracking-wide text-white leading-none">PROJECT COBRA</span>

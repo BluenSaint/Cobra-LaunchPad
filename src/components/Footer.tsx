@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebook, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
@@ -33,8 +34,14 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-12">
           <div className="max-w-xs">
             <div className="flex items-center mb-6">
-              <div className="bg-slate-800/80 rounded-full p-1.5 flex items-center justify-center w-8 h-8 border border-purple-900/30 mr-2">
-                <span className="text-sm font-bold text-white">BC</span>
+              <div className="rounded-full p-1 flex items-center justify-center w-8 h-8 mr-2">
+                <Image 
+                  src="/bluecrest-logo.png" 
+                  alt="BlueCrest Financial" 
+                  width={32} 
+                  height={32} 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="text-lg font-bold uppercase text-white leading-none">PROJECT COBRA</span>

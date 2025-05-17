@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import CreditCardAnimation from './CreditCardAnimation'
+import AnimatedButton from './AnimatedButton'
 
 export default function HeroSection() {
   return (
@@ -44,169 +46,238 @@ export default function HeroSection() {
             </p>
             
             <div className="flex flex-wrap gap-4">
-              <motion.a
-                href="#pricing"
-                className="relative group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-lg blur opacity-60 group-hover:opacity-100 transition duration-300"></div>
-                <button className="relative bg-slate-900 px-6 py-3 text-white rounded-md font-medium transition-all duration-300">
-                  Get Started
-                </button>
-              </motion.a>
+              <AnimatedButton href="#pricing" variant="primary">
+                Get Started
+              </AnimatedButton>
               
-              <motion.a
-                href="#how-it-works"
-                className="border border-white/20 px-6 py-3 text-white rounded-md font-medium hover:bg-white/5 transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <AnimatedButton href="#how-it-works" variant="secondary">
                 See How it Works
-              </motion.a>
+              </AnimatedButton>
             </div>
             
             <div className="mt-12">
               <div className="flex flex-wrap gap-4 items-center">
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 text-sm">
+                <motion.div 
+                  className="inline-flex items-center px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 text-sm"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.0 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    backgroundColor: "rgba(30, 41, 59, 0.9)",
+                    boxShadow: "0 0 10px 0 rgba(139, 92, 246, 0.3)" 
+                  }}
+                >
                   <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 mr-1 text-primary">
                     <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   CROA Compliant
-                </div>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 text-sm">
+                </motion.div>
+                <motion.div 
+                  className="inline-flex items-center px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 text-sm"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.2 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    backgroundColor: "rgba(30, 41, 59, 0.9)",
+                    boxShadow: "0 0 10px 0 rgba(139, 92, 246, 0.3)" 
+                  }}
+                >
                   <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 mr-1 text-primary">
                     <path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   7-Day Refund Policy
-                </div>
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 text-sm">
+                </motion.div>
+                <motion.div 
+                  className="inline-flex items-center px-3 py-1 rounded-full bg-slate-800/80 text-slate-300 text-sm"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.4 }}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    backgroundColor: "rgba(30, 41, 59, 0.9)",
+                    boxShadow: "0 0 10px 0 rgba(139, 92, 246, 0.3)" 
+                  }}
+                >
                   <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 mr-1 text-primary">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                   SOC2 Secured
-                </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
           
-          {/* Right column - dashboard visualization */}
+          {/* Right column - interactive elements */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-slate-800/40 p-6 rounded-lg border border-purple-900/30 backdrop-blur-sm shadow-xl"
+            className="relative z-10"
           >
-            <div className="flex justify-between items-center mb-6">
-              <div className="flex items-center">
-                <div className="w-3 h-3 rounded-full bg-primary mr-2"></div>
-                <span className="text-sm text-white font-medium">Credit Analytics Dashboard</span>
-              </div>
-              <div className="flex gap-1">
-                <div className="w-2 h-2 rounded-full bg-red-400"></div>
-                <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
-                <div className="w-2 h-2 rounded-full bg-green-400"></div>
-              </div>
-            </div>
+            {/* Interactive credit card */}
+            <CreditCardAnimation />
             
-            {/* Credit Score Display */}
-            <div className="relative bg-slate-900/80 p-6 rounded-lg mb-6 border border-slate-800">
-              <div className="flex justify-center">
-                <div className="relative w-40 h-40">
-                  {/* Score circle background */}
-                  <svg className="w-full h-full" viewBox="0 0 120 120">
-                    <circle 
-                      cx="60" 
-                      cy="60" 
-                      r="54" 
-                      fill="none" 
-                      stroke="#1e293b" 
-                      strokeWidth="12" 
-                    />
-                    {/* Score indicator - approximately 75% filled */}
-                    <circle 
-                      cx="60" 
-                      cy="60" 
-                      r="54" 
-                      fill="none" 
-                      stroke="url(#gradientScore)" 
-                      strokeWidth="12" 
-                      strokeDasharray="340" 
-                      strokeDashoffset="85" 
-                      strokeLinecap="round" 
-                      transform="rotate(-90 60 60)" 
-                    />
-                    <defs>
-                      <linearGradient id="gradientScore" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" stopColor="#8a5cf5" />
-                        <stop offset="50%" stopColor="#8a5cf5" />
-                        <stop offset="100%" stopColor="#6366f1" />
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                  {/* Score text */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-4xl font-bold text-white">720</span>
-                    <span className="text-sm text-primary">Good</span>
-                  </div>
+            {/* Dashboard visualization below the card */}
+            <div className="bg-slate-800/40 p-6 rounded-lg border border-purple-900/30 backdrop-blur-sm shadow-xl mt-8">
+              <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center">
+                  <div className="w-3 h-3 rounded-full bg-primary mr-2"></div>
+                  <span className="text-sm text-white font-medium">Credit Analytics Dashboard</span>
                 </div>
-              </div>
-              <div className="mt-4 flex justify-between text-xs text-slate-400">
-                <span>Poor</span>
-                <span>Fair</span>
-                <span>Good</span>
-                <span>Excellent</span>
-              </div>
-            </div>
-            
-            {/* Additional dashboard elements */}
-            <div className="grid gap-3">
-              <div className="bg-slate-900/80 p-4 rounded-lg border border-slate-800">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 rounded-full bg-primary mr-2"></div>
-                    <span className="text-sm text-white">Automated Disputes</span>
-                  </div>
-                  <span className="text-xs px-2 py-0.5 bg-purple-900/50 rounded text-purple-400">3 in progress</span>
-                </div>
-                <div className="mt-2 grid grid-cols-3 gap-1">
-                  <div className="h-1.5 bg-primary rounded"></div>
-                  <div className="h-1.5 bg-slate-700 rounded"></div>
-                  <div className="h-1.5 bg-slate-700 rounded"></div>
+                <div className="flex gap-1">
+                  <div className="w-2 h-2 rounded-full bg-red-400"></div>
+                  <div className="w-2 h-2 rounded-full bg-yellow-400"></div>
+                  <div className="w-2 h-2 rounded-full bg-green-400"></div>
                 </div>
               </div>
               
-              <div className="bg-slate-900/80 p-4 rounded-lg border border-slate-800">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 rounded-full bg-indigo-500 mr-2"></div>
-                    <span className="text-sm text-white">Success Rate</span>
+              {/* Additional dashboard elements */}
+              <div className="grid gap-3">
+                <motion.div 
+                  className="bg-slate-900/80 p-4 rounded-lg border border-slate-800"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.6 }}
+                  whileHover={{ 
+                    y: -5,
+                    boxShadow: "0 10px 25px -5px rgba(139, 92, 246, 0.2)",
+                    borderColor: "rgba(99, 102, 241, 0.3)",
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 rounded-full bg-primary mr-2"></div>
+                      <span className="text-sm text-white">Automated Disputes</span>
+                    </div>
+                    <span className="text-xs px-2 py-0.5 bg-purple-900/50 rounded text-purple-400">3 in progress</span>
                   </div>
-                  <span className="text-xs px-2 py-0.5 bg-indigo-900/50 rounded text-indigo-400">78%</span>
-                </div>
-                <div className="mt-2 grid grid-cols-4 gap-1">
-                  <div className="h-1.5 bg-indigo-500 rounded"></div>
-                  <div className="h-1.5 bg-indigo-500 rounded"></div>
-                  <div className="h-1.5 bg-indigo-500 rounded"></div>
-                  <div className="h-1.5 bg-slate-700 rounded"></div>
-                </div>
-              </div>
-              
-              <div className="bg-slate-900/80 p-4 rounded-lg border border-slate-800">
-                <div className="flex items-center justify-between mb-2">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
-                    <span className="text-sm text-white">Estimated Score Increase</span>
+                  <div className="mt-2 grid grid-cols-3 gap-1">
+                    <motion.div 
+                      className="h-1.5 bg-primary rounded"
+                      animate={{ 
+                        width: ["0%", "100%"],
+                        opacity: [0.5, 1]
+                      }}
+                      transition={{
+                        duration: 1,
+                        delay: 2,
+                        ease: "easeOut"
+                      }}
+                    />
+                    <div className="h-1.5 bg-slate-700 rounded"></div>
+                    <div className="h-1.5 bg-slate-700 rounded"></div>
                   </div>
-                  <span className="text-xs px-2 py-0.5 bg-purple-900/50 rounded text-purple-400">+45 pts</span>
-                </div>
-                <div className="mt-2 grid grid-cols-5 gap-1">
-                  <div className="h-1.5 bg-purple-500 rounded"></div>
-                  <div className="h-1.5 bg-purple-500 rounded"></div>
-                  <div className="h-1.5 bg-slate-700 rounded"></div>
-                  <div className="h-1.5 bg-slate-700 rounded"></div>
-                  <div className="h-1.5 bg-slate-700 rounded"></div>
-                </div>
+                </motion.div>
+                
+                <motion.div 
+                  className="bg-slate-900/80 p-4 rounded-lg border border-slate-800"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 1.8 }}
+                  whileHover={{ 
+                    y: -5,
+                    boxShadow: "0 10px 25px -5px rgba(99, 102, 241, 0.2)",
+                    borderColor: "rgba(99, 102, 241, 0.3)",
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 rounded-full bg-indigo-500 mr-2"></div>
+                      <span className="text-sm text-white">Success Rate</span>
+                    </div>
+                    <span className="text-xs px-2 py-0.5 bg-indigo-900/50 rounded text-indigo-400">78%</span>
+                  </div>
+                  <div className="mt-2 grid grid-cols-4 gap-1">
+                    <motion.div 
+                      className="h-1.5 bg-indigo-500 rounded"
+                      animate={{ 
+                        width: ["0%", "100%"],
+                        opacity: [0.5, 1]
+                      }}
+                      transition={{
+                        duration: 1,
+                        delay: 2.1,
+                        ease: "easeOut"
+                      }}
+                    />
+                    <motion.div 
+                      className="h-1.5 bg-indigo-500 rounded"
+                      animate={{ 
+                        width: ["0%", "100%"],
+                        opacity: [0.5, 1]
+                      }}
+                      transition={{
+                        duration: 1,
+                        delay: 2.3,
+                        ease: "easeOut"
+                      }}
+                    />
+                    <motion.div 
+                      className="h-1.5 bg-indigo-500 rounded"
+                      animate={{ 
+                        width: ["0%", "100%"],
+                        opacity: [0.5, 1]
+                      }}
+                      transition={{
+                        duration: 1,
+                        delay: 2.5,
+                        ease: "easeOut"
+                      }}
+                    />
+                    <div className="h-1.5 bg-slate-700 rounded"></div>
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  className="bg-slate-900/80 p-4 rounded-lg border border-slate-800"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 2.0 }}
+                  whileHover={{ 
+                    y: -5,
+                    boxShadow: "0 10px 25px -5px rgba(168, 85, 247, 0.2)",
+                    borderColor: "rgba(168, 85, 247, 0.3)",
+                  }}
+                >
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center">
+                      <div className="w-2 h-2 rounded-full bg-purple-500 mr-2"></div>
+                      <span className="text-sm text-white">Estimated Score Increase</span>
+                    </div>
+                    <span className="text-xs px-2 py-0.5 bg-purple-900/50 rounded text-purple-400">+45 pts</span>
+                  </div>
+                  <div className="mt-2 grid grid-cols-5 gap-1">
+                    <motion.div 
+                      className="h-1.5 bg-purple-500 rounded"
+                      animate={{ 
+                        width: ["0%", "100%"],
+                        opacity: [0.5, 1]
+                      }}
+                      transition={{
+                        duration: 1,
+                        delay: 2.2,
+                        ease: "easeOut"
+                      }}
+                    />
+                    <motion.div 
+                      className="h-1.5 bg-purple-500 rounded"
+                      animate={{ 
+                        width: ["0%", "100%"],
+                        opacity: [0.5, 1]
+                      }}
+                      transition={{
+                        duration: 1,
+                        delay: 2.4,
+                        ease: "easeOut"
+                      }}
+                    />
+                    <div className="h-1.5 bg-slate-700 rounded"></div>
+                    <div className="h-1.5 bg-slate-700 rounded"></div>
+                    <div className="h-1.5 bg-slate-700 rounded"></div>
+                  </div>
+                </motion.div>
               </div>
             </div>
           </motion.div>
