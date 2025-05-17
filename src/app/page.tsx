@@ -9,6 +9,8 @@ import Footer from '@/components/Footer'
 import BackToTop from '@/components/BackToTop'
 import CTA from '@/components/CTA'
 import ClientWrapper from '@/components/ClientWrapper'
+import CreditScore from '@/components/CreditScore'
+import TrustedBy from '@/components/TrustedBy'
 
 export default function Home() {
   return (
@@ -16,7 +18,9 @@ export default function Home() {
       <Navbar />
       <ClientWrapper>
         <HeroSection />
+        <TrustedBy />
         <Features />
+        <CreditScore />
         <HowItWorks />
         <Testimonials />
         <FAQ />
