@@ -20,12 +20,12 @@ export default function CTA() {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Let AI do the Work so <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">you can Scale Faster</span>
+            Improve Your Credit Score with <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Project Cobra</span>
           </h2>
           
           <p className="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who have improved their financial future with our AI-powered solutions.
+            Join thousands of satisfied customers who have improved their financial future with our AI-powered credit repair solutions.
           </p>
           
           <div className="flex flex-wrap justify-center gap-4">
@@ -33,7 +33,7 @@ export default function CTA() {
               href="#pricing" 
               className="bg-primary hover:bg-primary-hover px-8 py-4 text-lg font-medium text-white rounded-lg inline-block transition-colors"
             >
-              Get Started for Free
+              Get Started Today
             </a>
             
             <a 
@@ -44,42 +44,57 @@ export default function CTA() {
             </a>
           </div>
           
-          {/* FAQ Collapse */}
-          <div className="mt-20">
-            <div className="bg-slate-900/50 border border-purple-900/30 rounded-lg p-6 text-left">
-              <h3 className="text-xl font-semibold text-white mb-4">We've Got the Answers You're Looking For</h3>
-              
-              <div className="space-y-4">
-                <div className="border-b border-white/10 pb-4">
-                  <button className="flex justify-between items-center w-full text-left">
-                    <span className="text-white font-medium">How quickly will I see results?</span>
-                    <svg className="w-5 h-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                  <div className="mt-2 text-slate-400 text-sm">
-                    Most customers see initial results within 30-45 days. Our AI automation system works around the clock to process disputes and monitor progress.
-                  </div>
-                </div>
-                
-                <div className="border-b border-white/10 pb-4">
-                  <button className="flex justify-between items-center w-full text-left">
-                    <span className="text-white font-medium">Is your service legally compliant?</span>
-                    <svg className="w-5 h-5 text-primary transform rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                </div>
-                
-                <div className="border-b border-white/10 pb-4">
-                  <button className="flex justify-between items-center w-full text-left">
-                    <span className="text-white font-medium">How is my data protected?</span>
-                    <svg className="w-5 h-5 text-primary transform rotate-180" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                </div>
+          {/* Credit Score Impact */}
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-slate-900/50 border border-purple-900/30 rounded-lg p-6">
+              <div className="text-2xl text-indigo-500 font-bold mb-4 flex justify-center">
+                <span className="relative">
+                  <span className="absolute -top-1 -right-2 text-sm">+</span>
+                  45
+                </span>
               </div>
+              <h3 className="text-white font-medium mb-2">Average Point Increase</h3>
+              <p className="text-slate-400 text-sm">Most customers see improvements within the first 45 days</p>
+            </div>
+            
+            <div className="bg-slate-900/50 border border-purple-900/30 rounded-lg p-6">
+              <div className="text-2xl text-indigo-500 font-bold mb-4 flex justify-center">
+                78%
+              </div>
+              <h3 className="text-white font-medium mb-2">Success Rate</h3>
+              <p className="text-slate-400 text-sm">Our AI algorithms achieve better than industry average results</p>
+            </div>
+            
+            <div className="bg-slate-900/50 border border-purple-900/30 rounded-lg p-6">
+              <div className="text-2xl text-indigo-500 font-bold mb-4 flex justify-center">
+                <span>$0</span>
+              </div>
+              <h3 className="text-white font-medium mb-2">Upfront Costs</h3>
+              <p className="text-slate-400 text-sm">Get started with no initial payment and a 7-day money-back guarantee</p>
+            </div>
+          </div>
+          
+          {/* Trust elements */}
+          <div className="mt-12 flex flex-wrap justify-center items-center gap-6">
+            <div className="flex items-center bg-slate-900/30 px-4 py-2 rounded-full border border-purple-900/20">
+              <svg className="w-5 h-5 text-primary mr-2" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-white text-sm">CROA Compliant</span>
+            </div>
+            
+            <div className="flex items-center bg-slate-900/30 px-4 py-2 rounded-full border border-purple-900/20">
+              <svg className="w-5 h-5 text-primary mr-2" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-white text-sm">SOC2 Secured</span>
+            </div>
+            
+            <div className="flex items-center bg-slate-900/30 px-4 py-2 rounded-full border border-purple-900/20">
+              <svg className="w-5 h-5 text-primary mr-2" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span className="text-white text-sm">7-Day Refund</span>
             </div>
           </div>
         </motion.div>

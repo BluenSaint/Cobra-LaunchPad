@@ -65,8 +65,8 @@ export default function HowItWorks() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold text-white mb-4">
-            Our Simple, Smart, and <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Scalable Process</span>
+            Project Cobra's <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Credit Repair Process</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
             Our intelligent system automates the credit repair process with minimal effort required from you.
@@ -108,6 +108,50 @@ export default function HowItWorks() {
             ))}
           </div>
           
+          {/* Credit repair benefits */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="mt-24 bg-gradient-to-br from-slate-900/90 to-slate-800/50 p-8 rounded-xl border border-purple-900/30"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="bg-purple-900/30 rounded-full p-3 mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 8V16M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Higher Credit Limits</h3>
+                <p className="text-slate-400">Improved credit scores can help you qualify for higher credit limits.</p>
+              </div>
+              
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="bg-purple-900/30 rounded-full p-3 mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M7 10L12 15L17 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M12 15V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Lower Interest Rates</h3>
+                <p className="text-slate-400">Better credit profiles qualify you for lower interest rates on loans and credit cards.</p>
+              </div>
+              
+              <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="bg-purple-900/30 rounded-full p-3 mb-4">
+                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 10H9.01M15 10H15.01M9 16H15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">Peace of Mind</h3>
+                <p className="text-slate-400">Automated monitoring keeps you informed of all changes to your credit reports.</p>
+              </div>
+            </div>
+          </motion.div>
+          
           {/* Code example */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,12 +169,15 @@ export default function HowItWorks() {
                     <div className="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
                     <div className="h-3 w-3 rounded-full bg-green-500"></div>
                   </div>
-                  <span className="text-xs text-slate-500">process.js</span>
+                  <span className="text-xs text-slate-500">credit-repair.js</span>
                 </div>
                 <pre className="text-xs md:text-sm text-slate-300 overflow-x-auto">
                   <code>
-{`// Define the automation workflow
-const automationSteps = [
+{`// Credit repair dispute workflow engine
+import { analyzeReports, generateDisputes } from './cobra-core';
+
+// Define the credit repair workflow
+const creditRepairWorkflow = [
   {
     name: 'dataCollection',
     function: collectCreditData,
@@ -138,26 +185,27 @@ const automationSteps = [
   },
   {
     name: 'analysis',
-    function: analyzeReportData,
+    function: analyzeReportItems,
     nextStep: 'disputeGeneration'
   }, 
   {
     name: 'disputeGeneration',
-    function: generateDisputeLetters,
+    function: createDisputeLetters,
     nextStep: 'filing'
   },
   {
     name: 'filing',
-    function: fileDisputes,
+    function: submitDisputesToBureaus,
     nextStep: 'monitoring'
   }
 ];
 
 // Execute workflow engine
-export function runWorkflow(userData) {
-  return new WorkflowEngine(automationSteps)
+export function runCreditRepair(userData) {
+  console.log("Starting credit repair process for: " + userData.name);
+  return new CreditRepairEngine(creditRepairWorkflow)
     .start(userData)
-    .then(results => sendNotification(userData, results));
+    .then(results => notifyUser(userData, results));
 }`}
                   </code>
                 </pre>

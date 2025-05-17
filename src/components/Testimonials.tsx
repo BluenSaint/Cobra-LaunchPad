@@ -4,23 +4,23 @@ import { motion } from 'framer-motion'
 
 const testimonials = [
   {
-    text: "The automation platform saved us hundreds of hours of manual work. Our team can now focus on strategy while AI handles the routine tasks.",
-    author: "James Carter",
-    title: "Marketing Director",
+    text: "My credit score was holding me back from getting a mortgage. Project Cobra's AI-powered disputes helped me remove 4 inaccurate collections, and my score jumped 87 points in just 2 months!",
+    author: "James Reynolds",
+    title: "Homeowner",
     image: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5
   },
   {
-    text: "I was skeptical at first, but the results speak for themselves. Within 45 days, we've seen a 30% increase in efficiency across departments.",
+    text: "I was skeptical at first, but the results speak for themselves. Project Cobra identified errors I never would have found myself, and their disputes got them removed. My score is up 65 points!",
     author: "Sophia Martinez",
-    title: "Operations Manager",
+    title: "Small Business Owner",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5
   },
   {
-    text: "The customer support team was fantastic in explaining everything. This solution has completely transformed how we approach automation.",
-    author: "David Reynolds",
-    title: "Tech Entrepreneur",
+    text: "After being denied for an auto loan, I tried Project Cobra. Their system found reporting errors from 3 years ago and got them removed. I've now been approved and saved thousands on interest!",
+    author: "David Chen",
+    title: "Software Engineer",
     image: "https://randomuser.me/api/portraits/men/54.jpg",
     rating: 5
   }
@@ -38,12 +38,12 @@ export default function Testimonials() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl font-bold mb-4 text-white">
-            Why Businesses Love <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Our AI Solutions</span>
+            What Our Clients <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">Are Saying</span>
           </h2>
           
           <p className="text-slate-400 max-w-2xl mx-auto">
-            Hear from real customers who have transformed their operations with our intelligent automation platform.
+            Real results from real people who have improved their credit scores with Project Cobra.
           </p>
         </motion.div>
 
@@ -91,22 +91,21 @@ export default function Testimonials() {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-8 bg-teal-50 rounded-xl border border-teal-100">
-            <div className="flex items-center mb-4">
-              <svg className="w-12 h-12 text-teal-600 mr-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
+          <div className="inline-block p-8 bg-gradient-to-br from-slate-900 to-purple-900/30 rounded-xl border border-purple-500/20 max-w-xl">
+            <div className="flex flex-col items-center mb-4">
+              <svg className="w-12 h-12 text-primary mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              <div className="text-left">
-                <h3 className="text-xl font-bold text-[#03293d]">Join 10,000+ Satisfied Customers</h3>
-                <p className="text-slate-600">Average credit score improvement: 75+ points</p>
-              </div>
+              <h3 className="text-2xl font-bold text-white">Average Score Improvement</h3>
+              <p className="text-slate-300 mt-2">Our clients see an average credit score increase of</p>
+              <div className="text-5xl font-bold mt-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">+72 points</div>
             </div>
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-6">
               <a 
                 href="#pricing" 
-                className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-lg shadow-teal-200/50"
+                className="bg-primary hover:bg-primary-hover text-white px-6 py-3 rounded-lg font-medium transition-colors shadow-lg shadow-purple-900/30"
               >
-                Start Your Journey Today
+                Start Your Credit Repair Today
               </a>
             </div>
           </div>

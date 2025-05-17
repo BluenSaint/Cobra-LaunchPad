@@ -57,9 +57,22 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center">
-            <span className="sr-only">Project Cobra</span>
-            <div className="text-2xl font-bold text-white">XTRACT<span className="text-primary">.</span></div>
+            <span className="sr-only">Project Cobra by BlueCrest Financial</span>
+            <div className="bg-slate-800/80 rounded-full p-1.5 flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 border border-purple-900/30">
+              <span className="text-lg font-bold text-white">BC</span>
+            </div>
+            <div className="flex flex-col ml-2">
+              <span className="text-lg font-bold uppercase tracking-wide text-white leading-none">PROJECT COBRA</span>
+              <span className="text-xs text-primary">by BlueCrest Financial</span>
+            </div>
           </Link>
+        </div>
+        
+        {/* Compliance badges on desktop */}
+        <div className="hidden lg:flex items-center gap-2 absolute left-1/2 -translate-x-1/2">
+          <span className="px-2 py-1 bg-slate-800/80 rounded-full text-xs text-primary border border-purple-900/30">CROA Compliant</span>
+          <span className="px-2 py-1 bg-slate-800/80 rounded-full text-xs text-primary border border-purple-900/30">FCRA Guidelines</span>
+          <span className="px-2 py-1 bg-slate-800/80 rounded-full text-xs text-primary border border-purple-900/30">SOC2</span>
         </div>
         
         <div className="hidden lg:flex lg:gap-x-10 justify-center">
@@ -116,7 +129,13 @@ export default function Navbar() {
               className="-m-1.5 p-1.5 flex items-center"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <div className="text-2xl font-bold text-white">XTRACT<span className="text-primary">.</span></div>
+              <div className="bg-slate-800/80 rounded-full p-1.5 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 border border-purple-900/30">
+                <span className="text-base font-bold text-white">BC</span>
+              </div>
+              <div className="flex flex-col ml-2">
+                <span className="text-base font-bold uppercase tracking-wide text-white leading-none">PROJECT COBRA</span>
+                <span className="text-xs text-primary">by BlueCrest Financial</span>
+              </div>
             </Link>
             <button
               type="button"
@@ -126,6 +145,13 @@ export default function Navbar() {
               <span className="sr-only">Close menu</span>
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
+          </div>
+          
+          {/* Mobile compliance badges */}
+          <div className="flex flex-wrap gap-2 mt-4">
+            <span className="px-2 py-1 bg-slate-800/80 rounded-full text-xs text-primary border border-purple-900/30">CROA Compliant</span>
+            <span className="px-2 py-1 bg-slate-800/80 rounded-full text-xs text-primary border border-purple-900/30">FCRA Guidelines</span>
+            <span className="px-2 py-1 bg-slate-800/80 rounded-full text-xs text-primary border border-purple-900/30">SOC2</span>
           </div>
           
           <div className="mt-6 flow-root">

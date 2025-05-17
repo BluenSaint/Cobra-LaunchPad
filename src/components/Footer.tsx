@@ -16,14 +16,14 @@ const footerLinks = {
     { name: "Privacy Policy", href: "/legal/privacy-policy" },
     { name: "Terms of Service", href: "/legal/terms" },
     { name: "Disclaimer", href: "/legal/disclaimer" },
-    { name: "Cookie Policy", href: "/legal/cookies" },
+    { name: "CROA Disclosure", href: "/legal/croa" },
   ],
   social: [
     { name: "Facebook", icon: faFacebook, href: "#" },
     { name: "X", icon: faXTwitter, href: "#" },
     { name: "Instagram", icon: faInstagram, href: "#" },
   ],
-  copyright: "© 2024 XTRACT AI. All Rights Reserved.",
+  copyright: "© 2024 BlueCrest Financial. All Rights Reserved.",
 }
 
 export default function Footer() {
@@ -33,10 +33,16 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-12">
           <div className="max-w-xs">
             <div className="flex items-center mb-6">
-              <div className="text-2xl font-bold text-white">XTRACT<span className="text-primary">.</span></div>
+              <div className="bg-slate-800/80 rounded-full p-1.5 flex items-center justify-center w-8 h-8 border border-purple-900/30 mr-2">
+                <span className="text-sm font-bold text-white">BC</span>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-lg font-bold uppercase text-white leading-none">PROJECT COBRA</span>
+                <span className="text-xs text-primary">by BlueCrest Financial</span>
+              </div>
             </div>
             <p className="text-slate-400 mb-6">
-              AI-powered automation platform focused on helping businesses scale through intelligent process optimization.
+              AI-powered credit repair platform focused on identifying and disputing inaccuracies to improve your credit score.
             </p>
             <div className="flex space-x-4 mb-6">
               {footerLinks.social.map((social) => (
@@ -91,7 +97,18 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-white/10">
+        {/* CROA Disclaimer */}
+        <div className="mt-12 p-6 border border-purple-900/30 rounded-lg bg-slate-900/50">
+          <h3 className="text-sm font-bold text-white mb-2">Credit Repair Organizations Act Disclosure:</h3>
+          <p className="text-xs text-slate-400 leading-relaxed">
+            According to the Credit Repair Organizations Act, 15 U.S.C. §1679 et seq., You have the right to dispute inaccurate information in your credit report by contacting the credit bureau directly. However, neither you nor any 'credit repair' company or credit repair organization has the right to have accurate, current, and verifiable information removed from your credit report. The credit bureau must remove accurate, negative information from your report only if it is over 7 years old. Bankruptcy information can be reported for 10 years.
+          </p>
+          <p className="text-xs text-slate-400 mt-2 leading-relaxed">
+            You have the right to a free credit report from each of the nationwide consumer reporting agencies once every 12 months. To obtain your free credit report, visit <a href="https://www.annualcreditreport.com" className="text-primary hover:underline">www.annualcreditreport.com</a> or call 1-877-322-8228.
+          </p>
+        </div>
+        
+        <div className="mt-8 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
             <p className="text-sm text-slate-500">{footerLinks.copyright}</p>
             

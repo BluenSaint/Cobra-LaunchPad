@@ -1,11 +1,7 @@
 'use client'
 
-import { ReactNode } from 'react'
+import React from 'react'
 
-interface ClientWrapperProps {
-  children: ReactNode
-}
-
-export default function ClientWrapper({ children }: ClientWrapperProps) {
+export default function ClientWrapper({ children }: { children: React.ReactNode }) {
   return <>{children}</>
 } 
