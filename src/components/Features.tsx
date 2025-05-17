@@ -94,7 +94,7 @@ export default function Features() {
 
   const featureCardVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: (i) => ({ 
+    visible: (i: number) => ({ 
       opacity: 1, 
       y: 0,
       transition: {
@@ -133,7 +133,7 @@ export default function Features() {
 
   const highlightCardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: (i) => ({ 
+    visible: (i: number) => ({ 
       opacity: 1, 
       y: 0,
       transition: { 
